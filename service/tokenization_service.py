@@ -2,10 +2,9 @@ import jwt
 import datetime
 from config import SECRET_KEY
 from models.user import User
-import json
 
 
-class Tokenization:
+class TokenizationService:
     """
     Token generation and verification
     """
@@ -40,7 +39,7 @@ class Tokenization:
             payload = jwt.decode(auth_token, SECRET_KEY)
             user_id = payload['sub']
             user = User(user_id)
-            return user.user_id
+            return user
         except jwt.ExpiredSignatureError:
             return 'Signature expired. Please log in again.'
         except jwt.InvalidTokenError:

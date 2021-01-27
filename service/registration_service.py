@@ -1,14 +1,14 @@
 from werkzeug.security import generate_password_hash
 from app import database
 from flask_sqlalchemy import UnmappedClassError
-from models.userprofiles import UserProfiles
-from models.autorization_data import AuthorizationData
+from models.orm_models.userprofiles import UserProfiles
+from models.orm_models.autorization_data import AuthorizationData
 from models.user import User
 from datetime import datetime
 import uuid
 
 
-class Registration:
+class RegistrationService:
     """
     Registration of a new user in the system
     """
