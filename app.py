@@ -15,9 +15,11 @@ database.session.commit()
 
 from resources.registration import RegistrationAPI
 from resources.authorization import AuthorizationAPI
+from resources.add_consumption import AddConsumption
 
 api.add_resource(RegistrationAPI, '/registration/<login>/<password>/<name>/<last_name>/<email>')
 api.add_resource(AuthorizationAPI, '/authorization/<login>/<password>')
+api.add_resource(AddConsumption, '/post/add-consumption/<token>')
 
 
 if __name__ == '__main__':
