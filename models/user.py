@@ -75,6 +75,7 @@ class User:
                             type=type_income,
                             creation_date=datetime.datetime.now(),
                             user_id=self.user_id)
+
             database.session.add(income)
             database.session.commit()
 
