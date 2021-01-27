@@ -1,5 +1,5 @@
 from werkzeug.security import check_password_hash
-from models.orm_models.userprofiles import UserProfiles
+from models.orm_models.user_profiles import UserProfiles
 from models.orm_models.autorization_data import AuthorizationData
 from models.user import User
 

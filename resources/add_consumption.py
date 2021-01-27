@@ -6,9 +6,9 @@ from flask import jsonify
 
 class AddConsumption(Resource):
     def post(self, token):
-        user = TokenizationService.decode_auth_token(token)
         args = parser.parse_args()
-        user.add_consumption(sum_consumption=args['sum'],
-                             category=args['category'])
-        answer = TokenizationService.encode_auth_token(user)
+        user = TokenizationService.decode_auth_token(token)
+        user.add_consumption(sum_consumption=int(args['sum']),
+                             category=str(args['category']))
+        answer = TokenizationService(user).encode_auth_token()
         return jsonify({"token": answer})

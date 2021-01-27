@@ -10,6 +10,8 @@ from config import *
 
 database = SQLAlchemy(app)
 
+from models.orm_models.consumption import Consumption
+
 database.create_all()
 database.session.commit()
 

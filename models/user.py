@@ -92,7 +92,7 @@ class User:
         """
         if not isinstance(sum_consumption, (int, float)):
             raise TypeError('Expected consumption sum type: int or float')
-        if isinstance(category, str):
+        if not isinstance(category, str):
             raise TypeError('Expected category type: str')
 
     @staticmethod
